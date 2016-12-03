@@ -1,5 +1,5 @@
 
-var $ = $.noConflict();
+var $ = jQuery.noConflict();
 $(document).ready(function () {
     "use strict";
 // site preloader -- also uncomment the div in the header and the css style for #preloader
@@ -23,10 +23,10 @@ $('.scrollToTop').click(function () {
     $('html, body').animate({scrollTop: 0}, 800);
     return false;
 });
-
+/*
 $(window).resize(function () {
     $(".navbar-collapse").css({maxHeight: $(window).height() - $(".navbar-header").height() + "px"});
-});
+});*/
 /* ==============================================
  Sticky Navbar
  =============================================== */
