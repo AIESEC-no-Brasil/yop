@@ -17,9 +17,11 @@
  */
 
 .wrapper {
-    max-width: 400px;
-    margin: 50px auto;
-    padding-left: 1em;
+    max-width: 100%;
+    float: left;
+    margin: 0 12px;
+    /* margin: 50px auto; */
+    /* padding-left: 1em; */
     padding-right: 1em;
 }
 
@@ -51,13 +53,14 @@
  */
 
 h2.cardmix{
-    line-height: 0.8;
+    line-height: 0.6;
     font-family: Roboto;    
  }
 
 h2.cardmix a{
-    font-size: 0.7em;
+    font-size: 0.5em;
     font-weight: 700;
+    margin-top: 0px !important;
 }
 
 .card {
@@ -77,17 +80,22 @@ h2.cardmix a{
         width: 100%;
         max-width: 100%;
         display: block;
+        height: 120px;
     }
 
 .card__content {
     position: relative;
 }
 
-/* card meta */
-.card__meta time {
-    font-size: 1.5rem;
+p.nomargin{
+    margin: 0px !important;
+}
+
+/* card meta2 */
+.card__meta2 {
+    font-size: 1.1rem;
     color: #bbb;
-    margin-left: 0.8rem;
+    margin-top: -9px;
 }
 
 /* card article */
@@ -167,6 +175,7 @@ h2.cardmix a{
     background-color: #fff;
     transition: all 0.3s ease;
     outline: 0;
+    font-size: 20px;
 
     box-shadow: 
             0 2px 4px rgba(0,0,0, 0.12),
@@ -183,6 +192,9 @@ h2.cardmix a{
         -ms-transform: scale(1.2);
         -o-transform: scale(1.2);
         transform: scale(1.2);
+
+        color: white;
+        background-color: #337ab7;
     }
 
 .facebook {
