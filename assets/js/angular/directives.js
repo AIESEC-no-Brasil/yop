@@ -149,4 +149,5 @@ function loadapp() {
  */
 angular
     .module('impactbrazil')
-    .directive('loadapp', loadapp);
+    .directive('loadapp', loadapp)
+    .directive('slider', slider);
