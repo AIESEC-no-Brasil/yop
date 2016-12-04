@@ -16,14 +16,14 @@
  * Basics Styles
  */
 
-.wrapper {
+/* .wrapper {
     max-width: 100%;
     float: left;
     margin: 0 12px;
-    /* margin: 50px auto; */
-    /* padding-left: 1em; */
+    margin: 50px auto;
+    padding-left: 1em;
     padding-right: 1em;
-}
+} */
 
 /**
  * Helpers
