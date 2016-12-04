@@ -17,6 +17,8 @@ function slider() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
+        centerMode: true,
+        focusOnSelect: true,
         responsive: [
           {
             breakpoint: 1024,
