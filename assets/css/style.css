@@ -2878,3 +2878,19 @@ a.carousel-control i {
     bottom: 0px;
   }
 }
+
+.search_op{
+
+  width: 100%;
+  border: 1px solid #dce0e0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px 0 #dce0e0;
+  -moz-box-shadow: 0 1px 3px 0 #dce0e0;
+  box-shadow: 0 1px 3px 0 #dce0e0;
+  margin-left: 0;
+  margin-right: 0;
+  height: 80px;
+
+}
