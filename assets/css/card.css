@@ -53,14 +53,18 @@
  */
 
 h2.cardmix{
-    line-height: 0.6;
+    line-height: 0.5;
     font-family: Roboto;    
  }
 
 h2.cardmix a{
-    font-size: 0.5em;
+    font-size: 0.4em;
     font-weight: 700;
     margin-top: 0px !important;
+}
+
+a.cardvaga{
+    font-size: 0.8em;
 }
 
 .card {
