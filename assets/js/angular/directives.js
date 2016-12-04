@@ -7,6 +7,19 @@
 /**
  * pageTitle - Directive for set Page title - mata title
  */
+function slider() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs, fn) {
+      var $ = jQuery.noConflict();
+      $('.slich_slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
+    }
+  }
+}
+
 function loadapp() {
   return {
     restrict: 'A',
