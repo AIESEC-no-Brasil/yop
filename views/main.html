@@ -105,28 +105,22 @@
 
                 <div class="card__content card__padding">
                     <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
                         <a id="share" class="ion-plus-round share-icon" href="#"></a>
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gv.location}}</a></p>
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gv.location | limitTo:30}}</a></p>
                     </div>
 
                     <article class="card__article">
-                        <h2 class="cardmix"><a href="#">{{gv.title}}</a></h2>
+                        <h2 class="cardmix"><a href="#">{{gv.title | limitTo:25}}</a></h2>
                     </article>
                     <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
+                        <p class="nomargin">Início a partir de {{gv.earliest_start_date | date:'dd/MM/yyyy'}}</p>
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
+                        <p class="nomargin"><i class="ion-clock"></i> {{gv.duration_max}} semanas</p>
                     </div>
 
                 </div>
@@ -145,259 +139,31 @@
     <div class="space-20 ng-scope"></div>
 
 
-    <div class="row slich_slider" slider><!-- DIV -->
-        <div class="col-md-3"> <!-- CARD -->
+    <div id="ge" class="row" slider><!-- DIV -->
+        <div class="col-md-3" ng-repeat="ge in lists[1]"> <!-- CARD -->
             <div class="card radius shadowDepth1">
                 <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+                    <img src="{{ge.cover_photo_urls}}" alt="image" class="border-tlr-radius">
                 </div>
 
                 <div class="card__content card__padding">
                     <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
                         <a id="share" class="ion-plus-round share-icon" href="#"></a>
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{ge.location | limitTo:30}}</a></p>
                     </div>
 
                     <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
+                        <h2 class="cardmix"><a href="#">{{ge.title | limitTo:25}}</a></h2>
                     </article>
                     <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
+                        <p class="nomargin">Início a partir de {{ge.earliest_start_date | date:'dd/MM/yyyy'}}</p>
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
+                        <p class="nomargin"><i class="ion-clock"></i> {{ge.duration_max}} semanas</p>
                     </div>
 
                 </div>
@@ -413,259 +179,31 @@
         <h3 class="title_home subtitle">Os períodos disponíveis variam de 12 a 36 semanas</h3>
     </div>
     <div class="space-20 ng-scope"></div>
-    <div class="row slich_slider" slider><!-- DIV -->
-        <div class="col-md-12"> <!-- CARD -->
+    <div id="gt" class="row" slider><!-- DIV -->
+        <div class="col-md-3" ng-repeat="gt in lists[1]"> <!-- CARD -->
             <div class="card radius shadowDepth1">
                 <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+                    <img src="{{gt.cover_photo_urls}}" alt="image" class="border-tlr-radius">
                 </div>
 
                 <div class="card__content card__padding">
                     <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
                         <a id="share" class="ion-plus-round share-icon" href="#"></a>
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gt.location | limitTo:30}}</a></p>
                     </div>
 
                     <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
+                        <h2 class="cardmix"><a href="#">{{gt.title | limitTo:25}}</a></h2>
                     </article>
                     <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
+                        <p class="nomargin">Início a partir de {{gt.earliest_start_date | date:'dd/MM/yyyy'}}</p>
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- CARD End -->
-        <div class="col-md-3"> <!-- CARD -->
-                
-            <div class="card radius shadowDepth1">
-                <div class="card__image border-tlr-radius">
-                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-
-                <div class="card__content card__padding">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                        </div>
-
-                        <a id="share" class="ion-plus-round share-icon" href="#"></a>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> Rio de Janeiro, Brasil</a></p>
-                    </div>
-
-                    <article class="card__article">
-                        <h2 class="cardmix"><a href="#">Culture Farm</a></h2>
-                    </article>
-                    <div class="card__meta2">
-                        <p class="nomargin">Início a partir de 19/09/2016</p>
-                    </div>
-
-                    <div class="card__meta">
-                        <p class="nomargin"><i class="ion-clock"></i> 6 semanas</p>
+                        <p class="nomargin"><i class="ion-clock"></i> {{gt.duration_max}} semanas</p>
                     </div>
 
                 </div>

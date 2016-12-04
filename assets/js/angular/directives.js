@@ -16,17 +16,15 @@ function slider($timeout) {
           var $ = jQuery.noConflict();
           $(elem).slick({
             slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToScroll: 3,
             autoplay: true,
             autoplaySpeed: 2000,
-            centerMode: true,
-            focusOnSelect: true,
             responsive: [
               {
                 breakpoint: 1024,
                 settings: {
                   slidesToShow: 4,
-                  slidesToScroll: 3,
+                  slidesToScroll: 2,
                   infinite: true,
                   dots: true
                 }

@@ -39,8 +39,8 @@ function homeCtrl($scope,$state,$stateParams,$localStorage,OpportunitiesService,
 		});
 	} else {
 		get_opportunities($scope.page[0],$scope.listGV,{'programmes':1},0).then(function(){$scope.call_slider('#gv');});
-		get_opportunities($scope.page[1],$scope.listGE,{'programmes':2,'is_ge':true},1);
-		get_opportunities($scope.page[2],$scope.listGT,{'programmes':2,'is_ge':false},2);
+		get_opportunities($scope.page[1],$scope.listGE,{'programmes':2,'is_ge':true},1).then(function(){$scope.call_slider('#ge');});
+		get_opportunities($scope.page[2],$scope.listGT,{'programmes':2,'is_ge':false},2).then(function(){$scope.call_slider('#gt');});
 	}
 
 	function test(elem) {
