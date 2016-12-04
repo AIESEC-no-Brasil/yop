@@ -1593,7 +1593,7 @@ MULTI LEVEL DROPDOWN CSS
 }
 
 h4.portfolio-post-title {
-  margin-bottom: 5px;
+  margin-bottom: -5px;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -2890,4 +2890,25 @@ a.carousel-control i {
 
 .row .adjust_btm{
       margin-bottom: -13px !important;
+}
+
+h2.title_home{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h3.title_home{
+  font-size: 12px;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: left;
+  margin: -15px 0 0 0 !important;
+  padding: 0 0 0 0 !important;
+}
+
+.padding_zero{
+  padding: 0px !important;
 }
