@@ -2879,18 +2879,15 @@ a.carousel-control i {
   }
 }
 
-.search_op{
+.search_op {
+    margin: 0;
+}
+.search_op .form-section{
+  background:rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 15px 0 15px 15px;
+}
 
-  width: 100%;
-  border: 1px solid #dce0e0;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px 0 #dce0e0;
-  -moz-box-shadow: 0 1px 3px 0 #dce0e0;
-  box-shadow: 0 1px 3px 0 #dce0e0;
-  margin-left: 0;
-  margin-right: 0;
-  height: 80px;
-
+.row .adjust_btm{
+      margin-bottom: -13px !important;
 }

@@ -49,13 +49,45 @@
 </section><!--main flex slider end-->
 <div class="space-50"></div>
 <div class="container">
-    <div class="row">
 
-        <div class="search_op">
-            
+  <div class="row">
+    <div class="col-md-12 col-md-offset-1 search_op">
+      <div class="form-section">
+        <div class="row adjust_btm">
+            <form role="form">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="sr-only" for="location">Local</label>
+                  <input type="email" class="form-control" id="location" placeholder="Onde você quer ir?">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="sr-only" for="checkin">Ida</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="checkin" placeholder="Ida" uib-datapicker-popup="dd-MM-yyyy">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="sr-only" for="checkout">Volta</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="checkout" placeholder="Volta">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-primary btn-lg"><i class="ion-search"></i> Procurar</button>
+              </div>
+            </form>
         </div>
-        
+      </div>
     </div>
+  </div>
+      
 
     <div class="space-70 ng-scope"></div>
     <div class="col-md-12 text-center wow animated fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
