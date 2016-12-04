@@ -2912,3 +2912,24 @@ h3.title_home{
 .padding_zero{
   padding: 0px !important;
 }
+
+.bottombar{
+  position: fixed;
+  height: 80px;
+  border-top: 1px solid #D8D8D8;
+  background-color: rgba(250, 250, 250, 0.9);;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+.customize{
+  padding-top: 20px !important;
+}
+
+.customize2{
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 30px !important;
+}
