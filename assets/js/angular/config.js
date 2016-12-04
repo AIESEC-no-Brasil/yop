@@ -21,7 +21,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         })
         .state('index.main', {
             url: "/main",
-            templateUrl: "views/main.html"
+            templateUrl: "views/main.html",
+            controller: 'homeCtrl'
         })
         .state('index.portal_gv', {
             url: "/global_volunteer/:lc?scrollTo&sdg",
