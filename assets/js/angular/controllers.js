@@ -1,10 +1,58 @@
-function opportunitiesCtrl($scope,$state,$stateParams,$localStorage,OpportunitiesService,AuthService) {
+function homeCtrl($scope,$state,$stateParams,$localStorage,OpportunitiesService,AuthService,$timeout) {
+	$scope.loading = [false,false,false];
+	$scope.lists = [[],[],[]];
+	$scope.error = [false,false,false];
+	$scope.page = [1,1,1];
+	$scope.sliderCtrl = {}
+
+	function get_opportunities(page, list, params, i) {
+		$scope.loading = true;
+		return OpportunitiesService.list($localStorage.token,page,params).then(
+			function(response) {
+				$scope.lists[i] = $scope.lists[i].concat(response.data.data);
+				$scope.loading = false;
+				console.log($scope.lists);
+				//console.log($scope.call_slider());
+				$scope.$broadcast('dataloaded');
+			},
+			function(response) {
+				console.log('Não rolou '+response.status);
+				console.log(response);
+				$scope.loading = false;
+				$scope.error = true;
+				$localStorage.token = null;
+				$state.transitionTo($state.current, $stateParams, {reload: true, inherit: true, notify: true});
+		});
+	};
+
+	if ($localStorage.token==null) {
+		AuthService.simple_token().then(function(token) {
+			if (token == null){
+				$localStorage.token = null;
+				$state.transitionTo($state.current, $stateParams, {reload: true, inherit: true, notify: true});
+			} else {
+				$localStorage.token = token;
+			}
+			get_opportunities($scope.page[0],$scope.listGV,{'programmes':1},0);
+			get_opportunities($scope.page[1],$scope.listGE,{'programmes':2,'is_ge':true},1);
+			get_opportunities($scope.page[2],$scope.listGT,{'programmes':2,'is_ge':false},2);
+		});
+	} else {
+		get_opportunities($scope.page[0],$scope.listGV,{'programmes':1},0).then(function(){$scope.call_slider('#gv');});
+		get_opportunities($scope.page[1],$scope.listGE,{'programmes':2,'is_ge':true},1);
+		get_opportunities($scope.page[2],$scope.listGT,{'programmes':2,'is_ge':false},2);
+	}
+
+	function test(elem) {
+	}
+}
+
+function opportunitiesCtrl($scope,$state,$stateParams,$localStorage,OpportunitiesService,AuthService) { 
 	$scope.loading = false;
-	$scope.token = null;
 	$scope.list = [];
 	$scope.error = false;
 	$scope.filter = 'all';
-	$scope.page = 1;
+	$scope.page = 1; 
 	$scope.filters = {};
 
 	function init_params() {
@@ -280,6 +328,7 @@ function ApplicationsCtrl($scope,$state,$stateParams,$localStorage,ApplicationSe
 
 angular
     .module('impactbrazil')
+    .controller('homeCtrl',homeCtrl)
     .controller('opportunitiesCtrl', opportunitiesCtrl)
     .controller('OpportunityDetailCtrl', OpportunityDetailCtrl)
     .controller('ApplicationsCtrl', ApplicationsCtrl)
