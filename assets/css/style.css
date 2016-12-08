@@ -2945,12 +2945,12 @@ h3.title_home{
   margin-bottom: 0px;
 }
 
-.customize{
-  padding-top: 20px !important;
+.customize_top{
+  padding-top: 16px !important;
 }
 
-.customize2{
+.customize2_top_font{
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   padding-top: 30px !important;
 }
