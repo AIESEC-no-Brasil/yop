@@ -7,5 +7,6 @@
 		'ngAnimate',
         'ngStorage',					// ngStorage
         'ngSanitize',					// ngStorage
+        'ui.select',
 	]);
 })();

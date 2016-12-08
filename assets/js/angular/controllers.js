@@ -3,7 +3,18 @@ function homeCtrl($scope,$state,$stateParams,$localStorage,OpportunitiesService,
 	$scope.lists = [[],[],[]];
 	$scope.error = [false,false,false];
 	$scope.page = [1,1,1];
-	$scope.sliderCtrl = {}
+	$scope.sliderCtrl = {};
+	$scope.selectedFilters = {};
+	$scope.filters = [
+		{name:'Colombia',type:'País'},
+		{name:'Argentina',type:'País'},
+		{name:'Paraguai',type:'País'},
+		{name:'Peru',type:'País'},
+		{name:'C++',type:'Conhecimento'},
+		{name:'Python',type:'Conhecimento'},
+		{name:'Ruby',type:'Conhecimento'},
+		{name:'Jacascript',type:'Conhecimento'},
+	];
 
 	function get_opportunities(page, list, params, i) {
 		$scope.loading = true;
@@ -43,7 +54,8 @@ function homeCtrl($scope,$state,$stateParams,$localStorage,OpportunitiesService,
 		get_opportunities($scope.page[2],$scope.listGT,{'programmes':2,'is_ge':false},2).then(function(){$scope.call_slider('#gt');});
 	}
 
-	function test(elem) {
+	$scope.tagTransform = function(name) {
+		return $scope.filters.filter(function(x) {return x == name})[0];
 	}
 }
 

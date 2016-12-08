@@ -3,7 +3,6 @@ f<section id="slider-sec" class="slider-reg">
         <ul class="slides">
             <li>
                 <figure>
-
                     <img src="assets/img/img-1.jpg" class="img-responsive" alt="slider-img-1">
                     <figcaption class="slider-overlay ">
                         <div class="slider-text animated fadeInDown">
@@ -55,22 +54,34 @@ f<section id="slider-sec" class="slider-reg">
       <div class="form-section">
         <div class="row adjust_btm">
             <form role="form">
-              <div class="col-md-4">
+              <div class="col-md-6 col-sm-12">
                 <div class="form-group">
                   <label class="sr-only" for="location">Local</label>
-                  <input type="email" class="form-control" id="location" placeholder="Onde você quer ir?">
+                  <ui-select multiple tagging="tagTransform" ng-model="selectedFilters" theme="bootstrap" title="O que lhe interessa?">
+                    <ui-select-match placeholder="O que lhe interessa?">{{$item.name}}</ui-select-match>
+                    <ui-select-choices repeat="tag in filters | propsFilter: {name: $select.search} track by tag.name" group-by="'type'">
+                      <div ng-bind-html="tag.name"></div>
+                      <small>
+                        Tipo: {{tag.type}}
+                      </small>
+                    </ui-select-choices>
+                  </ui-select>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2 col-sm-12">
                 <div class="form-group">
                   <label class="sr-only" for="checkin">Ida</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" id="checkin" placeholder="Ida" uib-datapicker-popup="dd-MM-yyyy">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <!--<input type="text" class="form-control" id="checkin" placeholder="Ida" uib-datapicker-popup="dd-MM-yyyy">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>-->
+                    <input type="text" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-model="start_date" close-text="Fechar" alt-input-formats="d!/M!/yyyy" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2 col-sm-12">
                 <div class="form-group">
                   <label class="sr-only" for="checkout">Volta</label>
                   <div class="input-group">
@@ -79,7 +90,7 @@ f<section id="slider-sec" class="slider-reg">
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-12">
                 <button type="submit" class="btn btn-primary btn-lg"><i class="ion-search"></i> Procurar</button>
               </div>
             </form>
@@ -109,11 +120,11 @@ f<section id="slider-sec" class="slider-reg">
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gv.location | limitTo:25}}</a></p>
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gv.location | limitTo:25}}{{gv.location.length > 25 ? '...' : ''}}</a></p>
                     </div>
 
                     <article class="card__article">
-                        <h2 class="cardmix"><a href="#/index/opportunity/{{gv.id}}">{{gv.title | limitTo:30}}</a></h2>
+                        <h2 class="cardmix"><a href="#/index/opportunity/{{gv.id}}">{{gv.title | limitTo:30}}{{gv.title.length > 30 ? '...' : ''}}</a></h2>
                     </article>
                     <div class="card__meta2">
                         <p class="nomargin">Início a partir de {{gv.earliest_start_date | date:'dd/MM/yyyy'}}</p>
@@ -152,11 +163,11 @@ f<section id="slider-sec" class="slider-reg">
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{ge.location | limitTo:25}}</a></p>
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{ge.location | limitTo:25}}{{ge.location.length > 25 ? '...' : ''}}</a></p>
                     </div>
 
                     <article class="card__article">
-                        <h2 class="cardmix"><a href="#/index/opportunity/{{ge.id}}">{{ge.title | limitTo:30}}</a></h2>
+                        <h2 class="cardmix"><a href="#/index/opportunity/{{ge.id}}">{{ge.title | limitTo:30}}{{ge.title.length > 30 ? '...' : ''}}</a></h2>
                     </article>
                     <div class="card__meta2">
                         <p class="nomargin">Início a partir de {{ge.earliest_start_date | date:'dd/MM/yyyy'}}</p>
@@ -192,11 +203,11 @@ f<section id="slider-sec" class="slider-reg">
                     </div>
 
                     <div class="card__meta">
-                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gt.location | limitTo:25}}</a></p>
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{gt.location | limitTo:25}}{{gt.location.length > 25 ? '...' : ''}}</a></p>
                     </div>
 
                     <article class="card__article">
-                        <h2 class="cardmix"><a href="#/index/opportunity/{{gt.id}}">{{gt.title | limitTo:30}}</a></h2>
+                        <h2 class="cardmix"><a href="#/index/opportunity/{{gt.id}}">{{gt.title | limitTo:30}}{{gt.title.length > 30 ? '...' : ''}}</a></h2>
                     </article>
                     <div class="card__meta2">
                         <p class="nomargin">Início a partir de {{gt.earliest_start_date | date:'dd/MM/yyyy'}}</p>
