@@ -2760,9 +2760,6 @@ a.carousel-control i {
   vertical-align: middle;
 }
 
-/***********************************************************************************
-*************************   Responsive css start here    ***************************
-***********************************************************************************/
 @media (max-width: 1024px) {
   .slider-text h1 {
     margin-top: 100px;
@@ -2884,7 +2881,7 @@ a.carousel-control i {
   height: 35px !important;
 }
 .ui-select-multiple input.ui-select-search {
-     width: auto !important;
+  width: auto !important;
 }
 .ui-select-container input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   padding-left: 10px;
@@ -2953,4 +2950,180 @@ h3.title_home{
   font-weight: 600;
   font-size: 16px;
   padding-top: 30px !important;
+}
+
+/* Loader */
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+          animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+/*Opportunity */
+.opportunity_header {
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+  position: absolute;
+  background-size: cover;
+}
+
+.oportunity_overlay {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.opportunity_title h2 {
+  color: #666;
+  font-weight: bold;
+}
+.opportunity_title p {
+  font-size: 1.3em;
+  padding-top: 15px;
+}
+
+.opportunity_info {
+
+}
+
+.opportunity_info h3 {
+  font-weight: bold;
+  font-size: 1.6em; 
+  text-transform: uppercase;
+}
+
+.opportunity_info h6 {
+  font-weight: bold;
+  padding-top: 10px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+
+}
+
+.opportunity_info p {
+  text-align: justify;
+  font-size: 1em;  
+}
+
+.opportunity_details {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sidebar-box big i {
+  font-size: 3em;
+}
+
+.sidebar-box i {
+  font-size: 2em;
+}
+
+.profile-list li {
+  color: #b3b3b3;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+}
+
+.profile-list .label {
+  padding-top: .7em;
+  padding-bottom: .7em;
 }

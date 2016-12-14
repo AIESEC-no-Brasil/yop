@@ -7,7 +7,7 @@
  *
  */
 function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
-    $urlRouterProvider.otherwise("/index/main");
+    $urlRouterProvider.otherwise("/main");
     $ocLazyLoadProvider.config({
         // Set to true if you want to see what and when is dynamically loaded
         debug: false
@@ -16,7 +16,6 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
     $stateProvider
         .state('index', {
             abstract: true,
-            url: "/index",
             templateUrl: "views/common/content.html",
         })
         .state('index.main', {
@@ -24,36 +23,24 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "views/main.html",
             controller: 'homeCtrl'
         })
-        .state('index.portal_gv', {
-            url: "/global_volunteer/:lc?scrollTo&sdg",
-            templateUrl: "views/search_gv.html"
-        })
-        .state('index.portal_ge', {
-            url: "/global_entrepreneur/:lc?scrollTo&background",
-            templateUrl: "views/search_ge.html"
-        })
-        .state('index.portal_gt', {
-            url: "/global_talent/:lc?scrollTo&background",
-            templateUrl: "views/search_gt.html"
-        })
-        .state('index.question1', {
-            url: "/question_one",
-            templateUrl: "views/questions/question1.html"
-        })
-        .state('index.question2', {
-            url: "/question_two",
-            templateUrl: "views/questions/question2.html"
-        })
-        .state('index.question3', {
-            url: "/question_three",
-            templateUrl: "views/questions/question3.html"
-        })
-        .state('index.question3-1', {
-            url: "/question_3",
-            templateUrl: "views/questions/question3-1.html"
+        .state('index.opportunities', {
+            url: "/oportunidades?backgrounds&languages&sdg_goals&programmes&work_fields&skills&home_mcs&start&end",
+            params: {
+                backgrounds: { array: true, value:undefined },
+                languages: { array: true },
+                sdg_goals: { array: true },
+                programmes: { array: true },
+                work_fields: { array: true },
+                skills: { array: true },
+                home_mcs: { array: true },
+                start: { array: false },
+                end: { array: false },
+            },
+            templateUrl: "views/search.html",
+            controller: 'opportunitiesCtrl',
         })
         .state('index.opportunity', {
-            url: "/opportunity/:id",
+            url: "/oportunidade/:id",
             templateUrl: "views/opportunity.html",
             controller: 'OpportunityDetailCtrl'
         })

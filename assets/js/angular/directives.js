@@ -37,7 +37,7 @@ function slider($timeout) {
                 }
               },
               {
-                breakpoint: 768,
+                breakpoint: 750,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1
@@ -45,8 +45,79 @@ function slider($timeout) {
               }
             ]
           });
-        },0,false);
+        },1,false);
       }
+    }
+  }
+}
+
+function datePicker() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs, ngModel) {
+      var $ = jQuery.noConflict();
+      var modelName = attrs['datePicker'];
+      $(element).datetimepicker({
+        format:'DD/MM/YYYY',
+        minDate: Date(),
+      });
+      $(element).on("dp.change", function (e) {
+          scope[attrs.ngModel] = $(element).find('input').val();
+      });
+
+    }
+  }
+}
+
+function flexSlider() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs, fn) {
+      var $ = jQuery.noConflict();
+      /*====flex  slider for main slider or testimonials====*/
+      $(element).flexslider({
+          slideshowSpeed: 5000,
+          directionNav: false,
+          animation: "fade"
+      });
+    }
+  }
+}
+
+
+
+
+function mansonry() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs, fn) {
+      var $ = jQuery.noConflict();
+      var $container = $('.mas-boxes');
+
+      var gutter = 30;
+      var min_width = 300;
+      $container.imagesLoaded( function(){
+          $container.masonry({
+              itemSelector : '.mas-boxes-inner',
+              //gutterWidth: gutter,
+              isAnimated: true,
+              /*columnWidth: function( containerWidth ) {
+                var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
+
+                if (box_width < min_width) {
+                    box_width = (((containerWidth - gutter)/2) | 0);
+                }
+
+                if (box_width < min_width) {
+                    box_width = containerWidth;
+                }
+
+                $('.mas-boxes-inner').width(box_width);
+
+                return box_width;
+              }*/
+          });
+      });
     }
   }
 }
@@ -181,4 +252,7 @@ function loadapp() {
 angular
     .module('impactbrazil')
     .directive('loadapp', loadapp)
-    .directive('slider', slider);
+    .directive('slider', slider)
+    .directive('datePicker', datePicker)
+    .directive('flexSlider', flexSlider)
+    .directive('mansonry', mansonry);

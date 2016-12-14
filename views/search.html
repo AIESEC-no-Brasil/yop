@@ -1,0 +1,147 @@
+<section id="content-region-3" class="padding-40 page-tree-bg">
+    <div class="container">
+        <h3 class="page-tree-text">
+            Portal de Oportunidades
+        </h3>
+    </div>
+</section><!--page-tree end here-->
+<div class="space-70"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-1 search_op">
+          <div class="form-section">
+            <div class="row adjust_btm">
+                <form role="form">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label class="sr-only" for="location">Local</label>
+                      <ui-select multiple tagging="tagTransform" ng-model="selectedFilters.selected" theme="bootstrap" title="O que lhe interessa?">
+                        <ui-select-match placeholder="O que lhe interessa?">{{$item.name}}</ui-select-match>
+                        <ui-select-choices repeat="tag in tag_filters | propsFilter: {name: $select.search} track by tag.name" group-by="'type'">
+                          <div ng-bind-html="tag.name"></div>
+                          <small>
+                            Tipo: {{tag.type}}
+                          </small>
+                        </ui-select-choices>
+                      </ui-select>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-6">
+                    <div class="form-group">
+                      <label class="sr-only" for="checkin">Ida</label>
+                      <div class="input-group" ng-model="start_date" date-picker>
+                        <input type='text' class="form-control" placeholder="Data de ida" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-6">
+                    <div class="form-group">
+                      <label class="sr-only" for="checkout">Volta</label>
+                      <div class="input-group" ng-model="end_date" date-picker>
+                        <input type='text' class="form-control" placeholder="Data de retorno" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="col-md-1 col-sm-2 nav navbar-nav">
+                      <li class="dropdown">
+                            <a class="dropdown-toggle js-activated" data-toggle="dropdown">Perfis</a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="load_selecteds([237,229,247,253,265])">Marketing</a></li>
+                                <li><a ng-click="load_selecteds([224,231,233,240,245,249,264,270])">Administração</a></li>  
+                                <li><a ng-click="load_selecteds([225,230,234,236,238,242,243,244,248,254,255,256,259,269])">Engenharias</a></li>
+                                <li><a ng-click="load_selecteds([238,239,268,269])">Tecnologia</a></li>
+                                <li><a ng-click="load_selecteds([241,251,252])">Ensino</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                  <!--<ul class="col-md-1 col-sm-2 nav navbar-nav">
+                      <li class="dropdown">
+                            <a class="dropdown-toggle js-activated" data-toggle="dropdown">Lingua</a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="">Inglês</a></li>
+                                <li><a ng-click="">Espanhol</a></li>  
+                                <li><a ng-click="">Francês</a></li>
+                            </ul>
+                      </li>
+                  </ul>-->
+                  <ul class="col-md-1 col-sm-2 nav navbar-nav">
+                      <li class="dropdown">
+                            <a class="dropdown-toggle js-activated" data-toggle="dropdown">SDGs</a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="load_selecteds([1101])">No Poverty</a></li>
+                                <li><a ng-click="load_selecteds([1104])">Quality Education</a></li>
+                                <li><a ng-click="load_selecteds([1110])">Reduce Inequalities</a></li>
+                                <li><a ng-click="load_selecteds([1113])">Climate Action</a></li>
+                                <li><a ng-click="load_selecteds([1117])">Partnership for the Goals</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                  <ul class="col-md-1 col-sm-2 nav navbar-nav">
+                      <li class="dropdown">
+                            <a class="dropdown-toggle js-activated" data-toggle="dropdown">Organização</a>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="add_programmee(1)">ONG</a></li>
+                                <li><a ng-click="add_programmee(5)">Startup</a></li>
+                                <li><a ng-click="add_programmee(2)">Companhia</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                  <div class="col-md-5 col-sm-12 text-right">
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="search()"><i class="ion-search"></i> Procurar</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="space-70"></div>
+
+<div class="blog-masonary-wrapper" mansonry>
+    <div class="container mas-boxes">
+        <div class="mas-boxes-inner col-lg-3 col-md-6 col-sm-12" ng-repeat="opportunity in opportunities">
+            <div class="card radius shadowDepth1 wow animated bounceIn" data-wow-delay="0.3s">
+                <div class="card__image border-tlr-radius">
+                    <img src="{{opportunity.cover_photo_urls}}" alt="image" class="border-tlr-radius">
+                </div>
+
+                <div class="card__content card__padding">
+                    <div class="card__share">
+                        <a id="share" class="ion-plus-round share-icon" href="#/oportunidade/{{opportunity.id}}"></a>
+                    </div>
+                    <div class="card__meta">
+                        <p class="nomargin"><a href="#"><i class="ion-location"></i> {{opportunity.location | limitTo:18}}{{opportunity.location.length > 18 ? '...' : ''}}</a></p>
+                    </div>
+                    <article class="card__article">
+                        <h2 class="cardmix"><a href="#/oportunidade/{{opportunity.id}}">{{opportunity.title | limitTo:26}}{{opportunity.title.length > 26 ? '...' : ''}}</a></h2>
+                    </article>
+                    <div class="card__meta2">
+                        <p class="nomargin">Início a partir de {{opportunity.earliest_start_date | date:'dd/MM/yyyy'}}</p>
+                    </div>
+                    <div class="card__meta">
+                        <p class="nomargin"><i class="ion-clock"></i> {{opportunity.duration_max}} semanas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center  col-sm-12" ng-show="loading">
+      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>
+    <div class="container">
+        <ul class="pager col-sm-12">
+            <li><a ng-click="more_opportunities()">Mais</a></li>
+        </ul>
+    </div>
+</div><!--masonary wrapper-->

@@ -7,20 +7,28 @@ function OpportunitiesService($filter,$http) {
 			'filters[programmes][]':filters['programmes'],
 			'filters[committee]':filters['committee'],
 			'filters[home_mcs][]':filters['home_mcs'],
-			'filters[is_ge]':filters['is_ge'],
 			'filters[work_fields][]':filters['work_fields'],
 			'filters[sdg_goals][]':filters['sdg_goals'],
+			'filters[backgrounds][][id]':filters['backgrounds'],
+			'filters[skills][][id]':filters['skills'],
+			'filters[languages][][id]':filters['languages'],
 			'access_token':token,
-			'per_page':20,
+			'per_page':28,
 			'page':page,
 			'sort':'applications_closing',
 		};
+		if(filters['earliest_start_date'] != null) { 
+			splited = filters['earliest_start_date'].split('/')
+			param['filters[earliest_start_date]'] = $filter('date')(new Date(splited[2],splited[1]-1,splited[0]), 'yyyy-MM-dd');
+		}
+		if(filters['latest_start_date'] != null) {
+			splited = filters['latest_start_date'].split('/')
+			param['filters[latest_start_date]'] = $filter('date')(new Date(splited[2],splited[1]-1,splited[0]), 'yyyy-MM-dd');
+		}
 		return $http.get(url,{params:param});
 	};
 
 	this.find = function(token,id) {
-		console.log(id);
-		console.log(url+id);
 		return $http.get(url+id,{params:{'access_token':token}});
 	}
 
@@ -72,7 +80,14 @@ function ApplicationService($http) {
 	}
 }
 
+function ListsService($http) {
+	this.get_lists = function(token) {
+		return $http.get('https://gis-api.aiesec.org/v2/lists/',{params:{'access_token':token,'lists[]':['backgrounds','languages','issues','skills','work_fields','work_types','nationalities','industries','study_levels','home_mcs','sdg_goals']}})
+	}
+}
+
 angular.module('impactbrazil')
 	.service('OpportunitiesService',OpportunitiesService)
 	.service('ApplicationService',ApplicationService)
+	.service('ListsService',ListsService)
 	.service('AuthService',AuthService);
